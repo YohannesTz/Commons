@@ -126,4 +126,18 @@ there are many ways:
  - doOnError()
  - onErrorReturnItem()
  - onErrorReturn()
+
 further reading, [here](https://www.geeksforgeeks.org/error-handling-in-rxjava/), [here](https://medium.com/swlh/master-error-handling-in-rxjava-crush-em-5cb66bb16ccd) and [here](https://www.baeldung.com/rxjava-error-handling)
+# can you tell about lifecycle methods when navigating from one activity to another activity
+when navigation from one activity to another activity all of these lifecycle methods get called.
+onPause -> onStop -> onDestroy -> onCreate -> onStart -> onResume
+# when you work with activities why do you do setContent() in side onCreate rather that onStart
+because onCreate is called only once. but other lifecycle methods get called so many times.
+# what is dagger and where is it used
+Dagger is a jvm library that is heavily used to do dependency injection in Android/kotlin or Java.
+# where do we need savedInstancestate 
+It's used when the Activity is forcefully terminated by the OS (ex: when your Activity is in the background and another task needs resources). 
+When this happens, onSaveInstanceState(Bundle outstate) will be called and it's up to your app to add any state data you want to save in outstate.
+# what is an intent-filter in Android
+An intent filter declares the capabilities of its parent component — what an activity or service can do and what types of broadcasts a receiver can handle. 
+It opens the component to receiving intents of the advertised type, while filtering out those that are not meaningful for the component.
