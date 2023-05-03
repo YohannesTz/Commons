@@ -58,7 +58,7 @@ internal means that any client inside this module who sees the declaring class s
 # what is livedata
 LiveData is a part of the architecture patterns. It's basically a data holder that contains primitive/collection types. It's used for observing changes in the view and updating the view when it is ACTIVE. Thus, LiveData is lifecycle aware.
 
-# what is coroutines
+# what are coroutines
 coroutines are like "light weight threads" which handle context switching by themselves with suspension and resuming.
 
 # what is suspend function
