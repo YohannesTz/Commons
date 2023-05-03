@@ -82,3 +82,48 @@ The ViewHolder pattern is a design pattern used in Android development to improv
 
 When a RecyclerView is scrolled, new items are created and old items are recycled. The ViewHolder pattern allows for the reuse of existing views, reducing the number of view creations and improving performance.
 
+# major difference between views and viewgroups
+View is the base class for widgets, which are used to create interactive UI components like buttons, text fields, etc. The ViewGroup is a subclass of View and provides invisible container that hold other Views or other ViewGroups and define their layout properties.
+
+# how would you optimise recyclerview?
+1. Use the ViewHolder pattern: This pattern helps to reduce the number of findViewById() calls and improves performance.
+2. Implement DiffUtil: DiffUtil is a utility class that calculates the difference between two lists and updates only the necessary items in the RecyclerView.
+3. Use a custom layout manager: A custom layout manager can help to optimize the layout of items in the RecyclerView.
+4. Limit the number of views: Avoid creating too many views at once, as this can cause performance issues. Instead, use pagination or lazy loading to load data as needed.
+5. Optimize item layouts: Make sure that item layouts are optimized for performance by using lightweight views and avoiding nested layouts.
+6. Use RecyclerView.RecycledViewPool: This class helps to reuse views across multiple RecyclerViews, which can improve performance.
+7. Avoid unnecessary animations: Animations can be resource-intensive, so avoid using them unnecessarily in your RecyclerView.
+8. Use data binding: Data binding can help to reduce boilerplate code and improve performance by reducing the number of findViewById() calls.
+9. Use an image loading library: If your RecyclerView contains images, consider using an image loading library like Glide or Picasso to improve performance and reduce memory usage.
+10. Profile your app: Finally, use profiling tools like Android Profiler or Systrace to identify any performance bottlenecks in your app and optimize accordingly.
+
+# what does okhttp interceptor mean?
+OkHttp interceptor is something that intercept the http requests before/after they were made. good example of this would be the logging interceptor that is 
+used when you want to log http-requests.
+
+# how does http caching work in Android
+when using HttpUrlConnection can be triggered by first setting setUseCaches to true, then the response must be bundled with caching strategy then calling 
+HttpResponseCache.install() this will allow the implementation to create cache files in side the cache dir. it gets easier if using third party library like
+okhttp or retrofit.
+
+# can you give tell about rxJava? how it works and its functionalities?
+RxJava is a Java based extension of ReactiveX. ReactiveX is a project which aims to provide reactive programming concept to various programming languages.
+Reactive Programming refers to the scenario where program reacts as and when data appears. It is a event based programming concept and events can propagate to
+registers observers. As per the Reactive, they have combined the best of Observer pattern, Iterator pattern and functional pattern.
+
+Some of its features include:
+ - Extends the observer pattern.
+ - Support sequences of data/events.
+ - Provides operators to compose sequences together declaratively.
+ - Handles threading, synchronization, thread-safety and concurrent data structures internally.
+
+# how would you handle errors in RxJava
+First, keep in mind that the Observable typically does not throw exceptions. Instead, by default, Observable invokes its Observer's onError() method, notifying 
+the observer that an unrecoverable error just occurred, and then quits without invoking any more of its Observer's methods. 
+there are many ways:
+ - onExceptionResumeNext()
+ - onErrorResumeNext()
+ - doOnError()
+ - onErrorReturnItem()
+ - onErrorReturn()
+further reading, [here](https://www.geeksforgeeks.org/error-handling-in-rxjava/), [here](https://medium.com/swlh/master-error-handling-in-rxjava-crush-em-5cb66bb16ccd) and [here](https://www.baeldung.com/rxjava-error-handling)
