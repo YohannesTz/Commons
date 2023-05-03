@@ -4,7 +4,7 @@ those are my answers, feel free to add yours and correct me if I am wrong.
 ## what is a dataclass
 a dataclass is a class in kotlin that is used to store data. it has all the nescessary getters and setters, toString() and equals methods.
 
-## what is a singlton
+## what is a singleton
 a singleton is a software design pattern that restrict that there should be one instance of an object through out the life time of a program.this
 can be achived by making the constructor of the class private (so it cannot be initialized from anywhere) and provide a public function to get the instance.
 
