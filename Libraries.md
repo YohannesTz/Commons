@@ -89,9 +89,21 @@ implementation "androidx.paging:paging-compose:1.0.0-alpha18"
 # workmanager (with hilt)
 module dependency
 ```
- //work manager
- implementation 'androidx.work:work-runtime-ktx:2.8.1'
- implementation 'androidx.hilt:hilt-work:1.0.0'
+//work manager
+implementation 'androidx.work:work-runtime-ktx:2.8.1'
+implementation 'androidx.hilt:hilt-work:1.0.0'
+```
+# Navigation
+```
+//navigation
+implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+```
+
+# timber
+```
+//timber
+implementation("com.jakewharton.timber:timber:5.0.1")
 ```
 
 add more if you have one.
