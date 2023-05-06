@@ -41,16 +41,26 @@ implementation "androidx.room:room-runtime:$room_version"
 implementation "androidx.room:room-ktx:$room_version"
 kapt "androidx.room:room-compiler:$room_version"
 ```
-module level config for migrations
+module level config for migrations inside default config
 ```
     javaCompileOptions {
         annotationProcessorOptions {
             arguments += [
                 "room.schemaLocation":"$projectDir/schemas".toString(),
                 "room.incremental":"true",
-                "room.expandProjection":"true"]
+                "room.expandProjection":"true"
+            ]
         }
     }
+```
+or if you are using kapt
+```
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas"),
+                arg("room.incremental", 
+            }
+        }
 ```
 # material design
 module dependecy
