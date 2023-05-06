@@ -118,3 +118,13 @@ implementation("com.jakewharton.timber:timber:5.0.1")
 ```
 
 add more if you have one.
+
+# generic Result class 
+generic Result class for flow 
+```
+sealed class ResultType<T> (val data : T? = null, val message : String? = null) {
+    class Success<T>(data: T?) : ResultType<T>(data)
+    class Error<T>(message: String?, data: T? = null) : ResultType<T>(data, message)
+    class Loading<T>(val isLoading: Boolean = true) : ResultType<T>(null)
+}
+```
