@@ -128,3 +128,14 @@ sealed class ResultType<T> (val data : T? = null, val message : String? = null) 
     class Loading<T>(val isLoading: Boolean = true) : ResultType<T>(null)
 }
 ```
+# Compose Icons 
+
+```
+repositories {
+    mavenCentral()
+}
+```
+then,
+```
+implementation 'br.com.devsrsouza.compose.icons:font-awesome:1.1.0'
+```
